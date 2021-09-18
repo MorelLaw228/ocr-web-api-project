@@ -1,5 +1,5 @@
 from flask import Flask,request,jsonify
-
+#from flask_cors import CORS,cross_origin
 
 # Create the flask app
 app = Flask(__name__)
@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # routes
 
-# Fonction de test  qui retourne le carré (reien à avoir avec notre projet d'OCR)
+# Fonction de test  qui retourne le carré (rien à avoir avec notre projet d'OCR)
 @app.route('/square/', methods=['POST'])
 def square():
     # get data
