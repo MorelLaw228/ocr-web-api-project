@@ -2,6 +2,24 @@ from flask import Flask,request,jsonify
 
 app = Flask(__name__)
 
+
+# routes
+@app.route('/square/', methods=['POST'])
+def square():
+    # get data
+    data = request.get_json()[0]
+    num_list = data.values()
+
+    response = {}
+    response['results'] = []
+
+    for n in num_list:
+        square = n ** 2
+        response['results'].append(square)
+
+    return jsonify(response)
+
+
 @app.route('/getmsg/',methods=['GET'])
 def respond():
     # Retrieve the name from url parameter
