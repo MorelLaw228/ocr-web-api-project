@@ -1,9 +1,13 @@
 from flask import Flask,request,jsonify
 
+
+# Create the flask app
 app = Flask(__name__)
 
 
 # routes
+
+# Fonction de test  qui retourne le carré (reien à avoir avec notre projet d'OCR)
 @app.route('/square/', methods=['POST'])
 def square():
     # get data
@@ -19,7 +23,7 @@ def square():
 
     return jsonify(response)
 
-
+# Fonction qui permet d'envoyer des requêtes HTTP  en GET (rien à  avoir avec notre projet d'OCR ) Test !!!!
 @app.route('/getmsg/',methods=['GET'])
 def respond():
     # Retrieve the name from url parameter
@@ -43,7 +47,8 @@ def respond():
     # Return the response in json format
     return jsonify(response)
 
-
+# Fonction qui permet d'envoyer des requêtes HTTP  en POST (rien à  avoir avec notre projet d'OCR ) Test !!!!
+# Retourne la reponse de la requête au format JSON
 @app.route('/post/',methods=['POST'])
 def post_something():
     param = request.form.get('name')
@@ -63,7 +68,7 @@ def post_something():
 
 # Un message d'acceuil pour tester notre serveur
 @app.route('/')
-def index():
+def mon_index():
     return "<h1> Bienvenue sur notre serveur .<h1>"
 
 if __name__=='__main__':
